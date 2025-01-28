@@ -57,6 +57,7 @@ dkms.conf
 settings.json
 all
 
+megaphone
 minishell
 valgrind/valgrind_suppressions.txt
 valgrind/valgrind_suppressions_raw.txt
