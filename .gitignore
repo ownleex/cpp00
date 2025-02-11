@@ -58,6 +58,7 @@ settings.json
 all
 
 megaphone
+phonebook
 minishell
 valgrind/valgrind_suppressions.txt
 valgrind/valgrind_suppressions_raw.txt
