@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:43 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/18 14:21:59 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:38:39 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ public:
     PhoneBook();
     void addContact(const Contact& contact);
     void searchContact() const;
-    void displayContacts() const;
 };
 
 #endif
