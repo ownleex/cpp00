@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/02/12 02:11:03 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:05:17 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,47 @@
 #include <iomanip>
 #include "Phonebook.hpp"
 
+std::string getNonEmptyInput(const std::string& prompt) {
+	std::string input;
+	do {
+		std::cout << prompt;
+		std::getline(std::cin, input);
+		if (input.empty()) {
+			std::cout << "This field cannot be empty. Please enter again." << std::endl;
+		}
+	} while (input.empty());
+	return input;
+}
+
 int main() {
-    PhoneBook phoneBook;
-    std::string command;
+	PhoneBook phoneBook;
+	std::string command;
 
-    while (true) {
-        std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-        std::cin >> command;
+	while (true) {
+		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
+		std::getline(std::cin, command);
 
-        if (command == "ADD") {
-            std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
+		if (command.empty()) {
+			continue;
+		}
+		if (command == "ADD") {
+			std::string firstName = getNonEmptyInput("First Name: ");
+			std::string lastName = getNonEmptyInput("Last Name: ");
+			std::string nickname = getNonEmptyInput("Nickname: ");
+			std::string phoneNumber = getNonEmptyInput("Phone Number: ");
+			std::string darkestSecret = getNonEmptyInput("Darkest Secret: ");
 
-            std::cout << "First Name: ";
-            std::cin.ignore();
-            std::getline(std::cin, firstName);
-
-            std::cout << "Last Name: ";
-            std::getline(std::cin, lastName);
-
-            std::cout << "Nickname: ";
-            std::getline(std::cin, nickname);
-
-            std::cout << "Phone Number: ";
-            std::getline(std::cin, phoneNumber);
-
-            std::cout << "Darkest Secret: ";
-            std::getline(std::cin, darkestSecret);
-
-            Contact newContact(firstName, lastName, nickname, phoneNumber, darkestSecret);
-            phoneBook.addContact(newContact);
-        }
-        else if (command == "SEARCH") {
-            phoneBook.searchContact();
-        }
-        else if (command == "EXIT") {
-            break;
-        }
-        else {
-            std::cout << "Invalid command. Please try again." << std::endl;
-        }
-    }
-
-    return 0;
+			phoneBook.addContact(Contact(firstName, lastName, nickname, phoneNumber, darkestSecret));
+		}
+		else if (command == "SEARCH") {
+			phoneBook.searchContact();
+		}
+		else if (command == "EXIT") {
+			break;
+		}
+		else {
+			std::cout << "BAD COMMAND" << std::endl;
+		}
+	}
+	return 0;
 }

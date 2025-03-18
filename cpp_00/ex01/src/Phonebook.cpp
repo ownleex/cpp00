@@ -6,51 +6,49 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:53 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/02/12 02:10:54 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:21:41 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
+#include <iostream>
+#include <limits>
 
-PhoneBook::PhoneBook() : currentIndex(0) {
-    // Initialisation du répertoire vide
-}
+PhoneBook::PhoneBook() : contactCount(0), oldestContactIndex(0) {}
 
 void PhoneBook::addContact(const Contact& contact) {
-    if (currentIndex < 8) {
-        contacts[currentIndex] = contact;
-        currentIndex++;
-    } else {
-        // Si le répertoire est plein, remplacer le plus ancien contact
-        for (int i = 0; i < 7; i++) {
-            contacts[i] = contacts[i + 1];
-        }
-        contacts[7] = contact;
-    }
+	if (contactCount < 8) {
+		contacts[contactCount] = contact;
+		contactCount++;
+	} else {
+		contacts[oldestContactIndex] = contact;
+		oldestContactIndex = (oldestContactIndex + 1) % 8;
+	}
 }
 
 void PhoneBook::searchContact() const {
-    displayContacts();
-
-    int index;
-    std::cout << "Enter index to display contact details: ";
-    std::cin >> index;
-
-    if (index >= 0 && index < currentIndex) {
-        contacts[index].displayContactDetails();
-    } else {
-        std::cout << "Invalid index." << std::endl;
-    }
-}
-
-void PhoneBook::displayContacts() const {
-    std::cout << std::setw(10) << "Index" << '|'
-              << std::setw(10) << "First Name" << '|'
-              << std::setw(10) << "Last Name" << '|'
-              << std::setw(10) << "Nickname" << std::endl;
-
-    for (int i = 0; i < currentIndex; i++) {
-        std::cout << std::setw(10) << i << '|';
-        contacts[i].displayContactPreview();
-    }
+	std::cout << std::setw(10) << "Index" << '|'
+			  << std::setw(10) << "First Name" << '|'
+			  << std::setw(10) << "Last Name" << '|'
+			  << std::setw(10) << "Nickname" << '|' << std::endl;
+	
+	for (int i = 0; i < contactCount; i++) {
+		std::cout << std::setw(10) << i << '|';
+		contacts[i].displayContactPreview();
+	}
+	
+	int index;
+	while (true) {
+		std::cout << "Enter index to display contact details: ";
+		std::cin >> index;
+		if (std::cin.fail() || index < 0 || index >= contactCount) {
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Invalid index!" << std::endl;
+		} else {
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			break;
+		}
+	}
+	contacts[index].displayContactDetails();
 }
