@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/02/12 02:10:36 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/18 17:55:40 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ private:
     std::string darkestSecret;
 
 public:
-    // Constructeur par défaut
     Contact() : firstName(""), lastName(""), nickname(""), phoneNumber(""), darkestSecret("") {}
 
     Contact(const std::string& firstName, const std::string& lastName, const std::string& nickname,
@@ -35,4 +34,4 @@ public:
     void displayContactDetails() const;
 };
 
-#endif // CONTACT_HPP
+#endif

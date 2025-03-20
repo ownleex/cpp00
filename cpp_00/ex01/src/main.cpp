@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/18 14:05:17 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/19 01:24:17 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ int main() {
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command);
 
-		if (command.empty()) {
+		if (command.empty())
 			continue;
-		}
 		if (command == "ADD") {
 			std::string firstName = getNonEmptyInput("First Name: ");
 			std::string lastName = getNonEmptyInput("Last Name: ");
@@ -49,12 +48,10 @@ int main() {
 		else if (command == "SEARCH") {
 			phoneBook.searchContact();
 		}
-		else if (command == "EXIT") {
+		else if (command == "EXIT")
 			break;
-		}
-		else {
+		else
 			std::cout << "BAD COMMAND" << std::endl;
-		}
 	}
 	return 0;
 }
