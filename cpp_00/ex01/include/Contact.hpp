@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/18 17:55:40 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/23 19:20:37 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 
 class Contact {
 private:
-    std::string firstName;
-    std::string lastName;
-    std::string nickname;
-    std::string phoneNumber;
-    std::string darkestSecret;
+	std::string firstName;
+	std::string lastName;
+	std::string nickname;
+	std::string phoneNumber;
+	std::string darkestSecret;
 
 public:
-    Contact() : firstName(""), lastName(""), nickname(""), phoneNumber(""), darkestSecret("") {}
+	Contact() : firstName(""), lastName(""), nickname(""), phoneNumber(""), darkestSecret("") {}
 
-    Contact(const std::string& firstName, const std::string& lastName, const std::string& nickname,
-            const std::string& phoneNumber, const std::string& darkestSecret);
+	Contact(const std::string& firstName, const std::string& lastName, const std::string& nickname,
+			const std::string& phoneNumber, const std::string& darkestSecret);
 
-    void displayContactPreview() const;
-    void displayContactDetails() const;
+	void displayContactPreview() const;
+	void displayContactDetails() const;
 };
 
 #endif

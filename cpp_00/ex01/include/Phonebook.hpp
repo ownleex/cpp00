@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:43 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/18 14:38:39 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/23 19:21:13 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 
 class PhoneBook {
 private:
-    Contact contacts[8];
-    int contactCount;
-    int oldestContactIndex;
+	Contact contacts[8];
+	int contactCount;
+	int oldestContactIndex;
 
 public:
-    PhoneBook();
-    void addContact(const Contact& contact);
-    void searchContact() const;
+	PhoneBook();
+	void addContact(const Contact& contact);
+	void searchContact() const;
 };
 
 #endif
