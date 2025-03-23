@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/23 17:22:13 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/23 17:47:46 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ std::string getValidInput(const std::string& prompt, const std::string& fieldTyp
     
     while (!isValid) {
         std::cout << prompt;
-        std::getline(std::cin, input);
+        if (!std::getline(std::cin, input)) {
+            std::cout << std::endl << "EOF detected, exiting program..." << std::endl;
+            return "";
+        }
         
         bool onlySpaces = true;
         for (size_t i = 0; i < input.length(); i++) {
@@ -76,16 +79,24 @@ int main() {
 
 	while (true) {
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, command);
+		if (!std::getline(std::cin, command)) {
+            std::cout << std::endl << "EOF detected, exiting program..." << std::endl;
+            break;
+        }
 
 		if (command.empty())
 			continue;
 			if (command == "ADD") {
 				std::string firstName = getValidInput("First Name: ", "name");
+				if (!std::cin) break;
 				std::string lastName = getValidInput("Last Name: ", "name");
+				if (!std::cin) break;
 				std::string nickname = getValidInput("Nickname: ", "alphanumeric");
+				if (!std::cin) break;
 				std::string phoneNumber = getValidInput("Phone Number: ", "numeric");
+				if (!std::cin) break;
 				std::string darkestSecret = getValidInput("Darkest Secret: ", "alphanumeric");
+				if (!std::cin) break;
 			
 				phoneBook.addContact(Contact(firstName, lastName, nickname, phoneNumber, darkestSecret));
 			}
