@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:53 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/23 19:21:25 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/25 01:25:56 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void PhoneBook::addContact(const Contact& contact) {
 
 void PhoneBook::searchContact() const {
 	if (contactCount == 0) {
-		std::cout << "Error: The phonebook is empty!" << std::endl;
+		std::cout << "The phonebook is empty!" << std::endl;
 		return;
 	}
 	
