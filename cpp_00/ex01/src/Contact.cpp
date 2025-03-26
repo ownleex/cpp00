@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:38 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/23 19:20:47 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:30:09 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Contact::Contact(const std::string& firstName, const std::string& lastName, cons
 void Contact::displayContactPreview() const {
 	std::cout << std::setw(10) << (firstName.size() > 10 ? firstName.substr(0, 9) + "." : firstName) << '|'
 			  << std::setw(10) << (lastName.size() > 10 ? lastName.substr(0, 9) + "." : lastName) << '|'
-			  << std::setw(10) << (nickname.size() > 10 ? nickname.substr(0, 9) + "." : nickname) << std::endl;
+			  << std::setw(10) << (nickname.size() > 10 ? nickname.substr(0, 9) + "." : nickname) << '|' << std::endl;
 }
 
 void Contact::displayContactDetails() const {

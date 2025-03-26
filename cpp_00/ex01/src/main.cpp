@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 17:18:10 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:17:29 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,17 +69,17 @@ int main() {
 
 		if (command.empty())
 			continue;
-			if (command == "ADD") {
-				std::string firstName = getValidInput("First Name: ", "any");
-				if (firstName.empty()) break;
-				std::string lastName = getValidInput("Last Name: ", "any");
-				if (lastName.empty()) break;
-				std::string nickname = getValidInput("Nickname: ", "any");
-				if (nickname.empty()) break;
-				std::string phoneNumber = getValidInput("Phone Number: ", "numeric");
-				if (phoneNumber.empty()) break;
-				std::string darkestSecret = getValidInput("Darkest Secret: ", "any");
-				if (darkestSecret.empty()) break;
+		if (command == "ADD") {
+			std::string firstName = getValidInput("First Name: ", "any");
+			if (firstName.empty()) break;
+			std::string lastName = getValidInput("Last Name: ", "any");
+			if (lastName.empty()) break;
+			std::string nickname = getValidInput("Nickname: ", "any");
+			if (nickname.empty()) break;
+			std::string phoneNumber = getValidInput("Phone Number: ", "numeric");
+			if (phoneNumber.empty()) break;
+			std::string darkestSecret = getValidInput("Darkest Secret: ", "any");
+			if (darkestSecret.empty()) break;
 			
 				phoneBook.addContact(Contact(firstName, lastName, nickname, phoneNumber, darkestSecret));
 			}

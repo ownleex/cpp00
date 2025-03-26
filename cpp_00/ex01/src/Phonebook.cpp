@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:53 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 16:03:01 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:35:43 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void PhoneBook::addContact(const Contact& contact) {
 	if (contactCount < 8) {
 		contacts[contactCount] = contact;
 		contactCount++;
-	} else {
+	}
+	else {
 		contacts[oldestContactIndex] = contact;
 		oldestContactIndex = (oldestContactIndex + 1) % 8;
 	}
@@ -32,15 +33,19 @@ void PhoneBook::searchContact() const {
 		return;
 	}
 	
-	std::cout << std::setw(10) << "Index" << '|'
+	std::cout << "---------------------------------------------" << std::endl
+			  << '|' << std::setw(10) << "Index" << '|'
 			  << std::setw(10) << "First Name" << '|'
-			  << std::setw(10) << "Last Name" << '|'
-			  << std::setw(10) << "Nickname" << '|' << std::endl;
+		      << std::setw(10) << "Last Name" << '|'
+	          << std::setw(10) << "Nickname" << '|' << std::endl
+			  << "---------------------------------------------" << std::endl;
 	
 	for (int i = 0; i < contactCount; i++) {
-		std::cout << std::setw(10) << i << '|';
+		std::cout << '|' << std::setw(10) << i << '|';
 		contacts[i].displayContactPreview();
 	}
+
+	std::cout << "---------------------------------------------" << std::endl;
 	
 	int index;
 	
