@@ -6,7 +6,7 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 22:11:37 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/03/26 22:50:40 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/03/26 23:07:29 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,7 @@ HEADERS				:= -I./include
 SRCDIR				:= src
 SRCS				:= $(SRCDIR)/main.cpp \
 					   $(SRCDIR)/Zombie.cpp \
-					   $(SRCDIR)/newZombie.cpp \
-					   $(SRCDIR)/randomChump.cpp
+					   $(SRCDIR)/zombieHorde.cpp
 
 OBJDIR				:= obj
 OBJS				:= $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))

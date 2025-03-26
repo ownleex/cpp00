@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 23:02:54 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 23:02:56 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 23:17:43 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ private:
     std::string name;
 
 public:
+    Zombie();
     Zombie(std::string name);
     ~Zombie();
     
+    void setName(std::string name);
     void announce(void) const;
 };
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
+Zombie* zombieHorde(int N, std::string name);
 
 #endif
