@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 00:28:15 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/27 00:47:57 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/27 00:50:02 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class HumanA {
 private:
     std::string name;
-    Weapon& weapon;  // Reference to a Weapon - HumanA is always armed
+    Weapon& weapon;
 
 public:
     HumanA(std::string name, Weapon& weapon);

@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 00:28:59 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/27 00:47:52 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/27 00:50:06 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class HumanB {
 private:
     std::string name;
-    Weapon* weapon;  // Pointer to a Weapon - HumanB may not always have a weapon
+    Weapon* weapon;
 
 public:
     HumanB(std::string name);
