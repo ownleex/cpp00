@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:53 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 18:35:43 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:57:31 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void PhoneBook::searchContact() const {
 	int index;
 	
 	while (true) {
-		std::cout << "Enter index to display contact details or -1 to retourning to main menu: ";
+		std::cout << "Enter index to display contact details or -1 to returning to main menu: ";
 		
 		if (!(std::cin >> index)) {
 			if (std::cin.eof()) {

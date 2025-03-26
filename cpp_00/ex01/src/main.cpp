@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 18:17:29 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 18:50:41 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,24 @@ std::string getValidInput(const std::string& prompt, const std::string& fieldTyp
 		}
 		
 		bool onlySpaces = true;
+		bool containsTab = false;
+		
 		for (size_t i = 0; i < input.length(); i++) {
 			if (!std::isspace(input[i])) {
 				onlySpaces = false;
-				break;
+			}
+			if (input[i] == '\t') {
+				containsTab = true;
 			}
 		}
 		
 		if (input.empty() || onlySpaces) {
 			std::cout << "This field cannot be empty or contain only spaces. Please enter again." << std::endl;
+			continue;
+		}
+		
+		if (containsTab) {
+			std::cout << "This field cannot contain tab characters. Please enter again." << std::endl;
 			continue;
 		}
 		
