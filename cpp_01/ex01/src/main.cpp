@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 22:08:41 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 23:04:04 by ayarmaya         ###   ########.fr       */
+/*   Created: 2025/03/26 23:03:04 by ayarmaya          #+#    #+#             */
+/*   Updated: 2025/03/26 23:03:05 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name) : name(name) {
-    return;
-}
-
-Zombie::~Zombie() {
-    std::cout << "Zombie " << this->name << " has been destroyed." << std::endl;
-}
-
-void Zombie::announce(void) const{
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+int main() {
+    Zombie* heapZombie = newZombie("Heap Zombie");
+    heapZombie->announce();
+    
+    randomChump("Stack Zombie");
+    
+    delete heapZombie;
+    
+    return 0;
 }
