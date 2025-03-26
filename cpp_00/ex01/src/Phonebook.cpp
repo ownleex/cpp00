@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:53 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/25 01:25:56 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 16:03:01 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,36 @@ void PhoneBook::searchContact() const {
 	}
 	
 	int index;
+	
 	while (true) {
-		std::cout << "Enter index to display contact details: ";
+		std::cout << "Enter index to display contact details or -1 to retourning to main menu: ";
+		
 		if (!(std::cin >> index)) {
-			std::cout << std::endl << "EOF detected or input error, returning to main menu" << std::endl;
+			if (std::cin.eof()) {
+				return;
+			}
+			
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Error input, please enter a number!" << std::endl;
+			continue;
+		}
+		
+		if (index == -1) {
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Returning to main menu" << std::endl;
 			return;
 		}
 		
 		if (index < 0 || index >= contactCount) {
 			std::cout << "Invalid index!" << std::endl;
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		} else {
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			break;
+			continue;
 		}
+		
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		break;
 	}
+	
 	contacts[index].displayContactDetails();
 }

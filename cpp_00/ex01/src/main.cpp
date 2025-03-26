@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/23 19:21:34 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 15:55:22 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ std::string getValidInput(const std::string& prompt, const std::string& fieldTyp
 	while (!isValid) {
 		std::cout << prompt;
 		if (!std::getline(std::cin, input)) {
-			std::cout << std::endl << "EOF detected, exiting program..." << std::endl;
-			return "";
+			if (std::cin.eof()) {
+				std::cout << std::endl << "EOF detected, exiting program..." << std::endl;
+				return NULL;
+			}
 		}
 		
 		bool onlySpaces = true;
