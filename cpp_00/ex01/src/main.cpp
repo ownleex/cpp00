@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 18:50:41 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/26 21:24:26 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,7 @@ int main() {
 			if (phoneNumber.empty()) break;
 			std::string darkestSecret = getValidInput("Darkest Secret: ", "any");
 			if (darkestSecret.empty()) break;
-			
-				phoneBook.addContact(Contact(firstName, lastName, nickname, phoneNumber, darkestSecret));
+			phoneBook.addContact(Contact(firstName, lastName, nickname, phoneNumber, darkestSecret));
 			}
 		else if (command == "SEARCH") {
 			phoneBook.searchContact();
