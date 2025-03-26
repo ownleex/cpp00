@@ -6,7 +6,25 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 00:29:18 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/27 00:29:20 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/27 00:47:42 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanB.hpp"
+
+HumanB::HumanB(std::string name) : name(name), weapon(NULL) {
+}
+
+HumanB::~HumanB() {
+}
+
+void HumanB::setWeapon(Weapon& weapon) {
+    this->weapon = &weapon;
+}
+
+void HumanB::attack() const {
+    if (this->weapon)
+        std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+    else
+        std::cout << this->name << " has no weapon to attack with!" << std::endl;
+}
