@@ -6,11 +6,11 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/26 22:11:37 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/03/26 23:32:03 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/03/27 01:18:10 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				:= zombie
+NAME				:= zombie_horde
 
 CC					:= c++
 CFLAGS				:= -Wall -Wextra -Werror -std=c++98
