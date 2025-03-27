@@ -5,20 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/03/27 00:52:42 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/03/27 01:14:50 by ayarmaya         ###   ########.fr        #
+#    Created: 2025/03/27 01:05:04 by ayarmaya          #+#    #+#              #
+#    Updated: 2025/03/27 01:12:53 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				:= sed_is_for_losers
+NAME				:= harl
 
 CC					:= c++
 CFLAGS				:= -Wall -Wextra -Werror -std=c++98
 RM					:= rm -f
 RMDIR				:= rm -rf
 
+HEADERS				:= -I./include
+
 SRCDIR				:= src
-SRCS				:= $(SRCDIR)/main.cpp
+SRCS				:= $(SRCDIR)/main.cpp \
+					   $(SRCDIR)/Harl.cpp
 
 OBJDIR				:= obj
 OBJS				:= $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
@@ -30,7 +33,7 @@ $(NAME)				: $(OBJS)
 
 $(OBJDIR)/%.o		: $(SRCDIR)/%.cpp
 		@mkdir -p $(@D)
-		$(CC) $(CFLAGS) -c $< -o $@
+		$(CC) $(CFLAGS) $(HEADERS) -c $< -o $@
 
 clean:
 		$(RMDIR) $(OBJDIR)
