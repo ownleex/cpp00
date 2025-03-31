@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 21:24:26 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/03/31 17:35:43 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <cctype>
 #include "Phonebook.hpp"
 
-std::string getValidInput(const std::string& prompt, const std::string& fieldType) {
+std::string getValidInput(const std::string& prompt) {
 	std::string input;
 	bool isValid = false;
 	
@@ -51,15 +51,6 @@ std::string getValidInput(const std::string& prompt, const std::string& fieldTyp
 		}
 		
 		isValid = true;
-		if (fieldType == "numeric") {
-			for (size_t i = 0; i < input.length(); i++) {
-				if (std::isalpha(input[i])) {
-					std::cout << "Phone number cannot contain letters. Please enter again." << std::endl;
-					isValid = false;
-					break;
-				}
-			}
-		}
 	}
 	
 	return input;
@@ -79,15 +70,15 @@ int main() {
 		if (command.empty())
 			continue;
 		if (command == "ADD") {
-			std::string firstName = getValidInput("First Name: ", "any");
+			std::string firstName = getValidInput("First Name: ");
 			if (firstName.empty()) break;
-			std::string lastName = getValidInput("Last Name: ", "any");
+			std::string lastName = getValidInput("Last Name: ");
 			if (lastName.empty()) break;
-			std::string nickname = getValidInput("Nickname: ", "any");
+			std::string nickname = getValidInput("Nickname: ");
 			if (nickname.empty()) break;
-			std::string phoneNumber = getValidInput("Phone Number: ", "numeric");
+			std::string phoneNumber = getValidInput("Phone Number: ");
 			if (phoneNumber.empty()) break;
-			std::string darkestSecret = getValidInput("Darkest Secret: ", "any");
+			std::string darkestSecret = getValidInput("Darkest Secret: ");
 			if (darkestSecret.empty()) break;
 			phoneBook.addContact(Contact(firstName, lastName, nickname, phoneNumber, darkestSecret));
 			}
