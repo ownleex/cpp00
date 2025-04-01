@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:38 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/01 19:01:35 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/02 00:45:50 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ std::string Contact::getNickname() const { return nickname; }
 std::string Contact::getPhoneNumber() const { return phoneNumber; }
 std::string Contact::getDarkestSecret() const { return darkestSecret; }
 
-void Contact::setFirstName(const std::string& name) { firstName = name; }
-void Contact::setLastName(const std::string& name) { lastName = name; }
+void Contact::setFirstName(const std::string& fname) { firstName = fname; }
+void Contact::setLastName(const std::string& lname) { lastName = lname; }
 void Contact::setNickname(const std::string& nick) { nickname = nick; }
 void Contact::setPhoneNumber(const std::string& number) { phoneNumber = number; }
 void Contact::setDarkestSecret(const std::string& secret) { darkestSecret = secret; }
