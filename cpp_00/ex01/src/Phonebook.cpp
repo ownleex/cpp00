@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:53 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 21:10:34 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/02 00:36:12 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ PhoneBook::PhoneBook() : contactCount(0), oldestContactIndex(0) {}
 
 void PhoneBook::addContact(const Contact& contact) {
 	if (contactCount < 8) {
-		contacts[contactCount] = contact;
+		contacts_array[contactCount] = contact;
 		contactCount++;
 	}
 	else {
-		contacts[oldestContactIndex] = contact;
+		contacts_array[oldestContactIndex] = contact;
 		oldestContactIndex = (oldestContactIndex + 1) % 8;
 	}
 }
@@ -42,7 +42,7 @@ void PhoneBook::searchContact() const {
 	
 	for (int i = 0; i < contactCount; i++) {
 		std::cout << '|' << std::setw(10) << i << '|';
-		contacts[i].displayContactPreview();
+		contacts_array[i].displayContactPreview();
 	}
 
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
@@ -79,5 +79,5 @@ void PhoneBook::searchContact() const {
 		break;
 	}
 	
-	contacts[index].displayContactDetails();
+	contacts_array[index].displayContactDetails();
 }
