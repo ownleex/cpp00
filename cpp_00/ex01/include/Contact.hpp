@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:34 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/01 19:00:52 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/03 00:32:17 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ public:
 	std::string getPhoneNumber() const;
 	std::string getDarkestSecret() const;
 
-	void setFirstName(const std::string& name);
-	void setLastName(const std::string& name);
+	void setFirstName(const std::string& fname);
+	void setLastName(const std::string& lname);
 	void setNickname(const std::string& nick);
 	void setPhoneNumber(const std::string& number);
 	void setDarkestSecret(const std::string& secret);

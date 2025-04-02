@@ -6,13 +6,14 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:53 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/02 01:07:01 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/03 00:39:54 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 #include <iostream>
 #include <limits>
+#include <cstdlib>
 
 PhoneBook::PhoneBook() : contactCount(0), oldestContactIndex(0) {}
 
@@ -38,13 +39,11 @@ void PhoneBook::searchContact() const {
 			  << std::setw(10) << "First Name" << '|'
 			  << std::setw(10) << "Last Name" << '|'
 			  << std::setw(10) << "Nickname" << '|' << std::endl
-			  << "+----------+----------+----------+----------+" << std::endl;
-	
+			  << "+----------+----------+----------+----------+" << std::endl;	
 	for (int i = 0; i < contactCount; i++) {
 		std::cout << '|' << std::setw(10) << i << '|';
 		contacts_array[i].displayContactPreview();
 	}
-
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	
 	int index;
@@ -54,7 +53,8 @@ void PhoneBook::searchContact() const {
 		
 		if (!(std::cin >> index)) {
 			if (std::cin.eof()) {
-				return;
+				std::cout << std::endl << "EOF detected, exiting program..." << std::endl;
+				exit(0);
 			}
 			
 			std::cin.clear();
