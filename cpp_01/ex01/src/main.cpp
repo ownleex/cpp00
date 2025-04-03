@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 23:03:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/03 18:08:11 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/03 18:11:07 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 int main() {
 	std::cout << std::endl << "Test 1: Basic horde creation and announcement" << std::endl << std::endl;
-	int hordeSize = 5;
-	Zombie* horde = zombieHorde(hordeSize, "Horde Member");
-	for (int i = 0; i < hordeSize; i++) {
+	Zombie* horde = zombieHorde(5, "Horde Member");
+	for (int i = 0; i < 5; i++) {
 		horde[i].announce();
 	}
 	delete[] horde;
@@ -37,10 +36,10 @@ int main() {
 	std::cout << std::endl << "Test 4: Empty horde (N=0) handling" << std::endl << std::endl;
 	Zombie* emptyHorde = zombieHorde(0, "Nobody");
 	if (emptyHorde == NULL)
-		std::cout << "La horde vide a bien retourné NULL" << std::endl;
+		std::cout << "Empty horde correctly returned NULL" << std::endl;
 	else {
 		delete[] emptyHorde;
-		std::cout << "La horde vide n'a pas retourné NULL" << std::endl;
+		std::cout << "Empty horde did not return NULL" << std::endl;
 	}
 
 	std::cout << std::endl << "Test 5: Horde with empty name strings" << std::endl << std::endl;
