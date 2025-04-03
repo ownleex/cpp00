@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 23:03:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/03 18:11:07 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/03 18:24:29 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main() {
 	delete[] anonymousHorde;
 
 	std::cout << std::endl << "Test 6: Horde with special characters in names" << std::endl << std::endl;
-	Zombie* specialHorde = zombieHorde(2, "Éç@#!?");
+	Zombie* specialHorde = zombieHorde(2, "Éç@/#!?");
 	for (int i = 0; i < 2; i++)
 		specialHorde[i].announce();
 	delete[] specialHorde;
