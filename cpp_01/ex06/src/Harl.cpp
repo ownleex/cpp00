@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 01:45:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/04 22:29:18 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/05 01:47:14 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,6 @@ void Harl::error(void) {
 	std::cout << std::endl;
 }
 
-void Harl::complain(std::string level) {
-	void (Harl::*funcs[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	
-	for (int i = 0; i < 4; i++) {
-		if (level == levels[i]) {
-			(this->*funcs[i])();
-			return;
-		}
-	}
-	
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-}
-
 int Harl::getLevelIndex(std::string level) {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	
@@ -71,17 +57,20 @@ int Harl::getLevelIndex(std::string level) {
 }
 
 void Harl::filterComplain(std::string level) {
+	void (Harl::*funcs[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	
 	int levelIndex = getLevelIndex(level);
 	
 	switch (levelIndex) {
 		case 0:
-			debug();
+			(this->*funcs[0])();
 		case 1:
-			info();
+			(this->*funcs[1])();
 		case 2:
-			warning();
+			(this->*funcs[2])();
 		case 3:
-			error();
+			(this->*funcs[3])();
 			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;

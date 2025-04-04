@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 01:45:21 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/04 21:11:35 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/05 01:47:20 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ public:
 	Harl();
 	~Harl();
 	
-	void complain(std::string level);
 	int getLevelIndex(std::string level);
 	void filterComplain(std::string level);
 };
