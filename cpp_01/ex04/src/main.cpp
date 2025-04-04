@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 00:54:29 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/04 19:06:44 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/04 19:19:31 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <fstream>
 #include <string>
 
-bool replaceInFile(const std::string& filename, const std::string& s1, const std::string& s2) {
+bool replace(const std::string& filename, const std::string& s1, const std::string& s2) {
 	std::ifstream inputFile(filename.c_str());
 	if (!inputFile.is_open()) {
 		std::cerr << "Error: Cannot open input file: " << filename << std::endl;
@@ -64,7 +64,7 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
-	if (!replaceInFile(filename, s1, s2)) {
+	if (!replace(filename, s1, s2)) {
 		return 1;
 	}
 	
