@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/04 14:54:26 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/04 23:25:51 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 
 std::string getValidInput(const std::string& prompt) {
 	std::string input;
-	bool isValid = false;
 	
-	while (!isValid) {
+	while (true) {
 		std::cout << prompt;
 		if (!std::getline(std::cin, input) && std::cin.eof()) {
 			std::cout << std::endl << "EOF detected, exiting program..." << std::endl;
@@ -48,7 +47,7 @@ std::string getValidInput(const std::string& prompt) {
 			continue;
 		}
 		
-		isValid = true;
+		break;
 	}
 	
 	return input;
@@ -60,8 +59,10 @@ int main() {
 
 	while (true) {
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-		if (!std::getline(std::cin, command) && std::cin.eof()) {
-			std::cout << std::endl << "EOF detected, exiting program..." << std::endl;
+		if (!std::getline(std::cin, command)) {
+			if (std::cin.eof()) {
+				std::cout << std::endl << "EOF detected, exiting program..." << std::endl;
+			}
 			break;
 		}
 
