@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:53 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/03 00:39:54 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/04 23:41:43 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void PhoneBook::searchContact() const {
 		return;
 	}
 	
-	std::cout << "+----------+----------+----------+----------+" << std::endl
-			  << '|' << std::setw(10) << "Index" << '|'
+	std::cout << "+----------+----------+----------+----------+" << std::endl << '|' 
+			  << std::setw(10) << "Index" << '|'
 			  << std::setw(10) << "First Name" << '|'
 			  << std::setw(10) << "Last Name" << '|'
 			  << std::setw(10) << "Nickname" << '|' << std::endl
