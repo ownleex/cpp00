@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/26 23:02:54 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/03/26 23:47:37 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/05 00:33:49 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ private:
 
 public:
 	Zombie();
-	Zombie(std::string name);
 	~Zombie();
 	
 	void setName(std::string name);
