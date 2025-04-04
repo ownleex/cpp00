@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 02:10:38 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/02 00:45:50 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/04 15:05:13 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ void Contact::displayContactPreview() const {
 }
 
 void Contact::displayContactDetails() const {
-	std::cout << "First Name: " << getFirstName() << std::endl;
-	std::cout << "Last Name: " << getLastName() << std::endl;
-	std::cout << "Nickname: " << getNickname() << std::endl;
-	std::cout << "Phone Number: " << getPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret: " << getDarkestSecret() << std::endl;
+	std::cout << std::endl;
+	std::cout << "First Name:       " << getFirstName() << std::endl;
+	std::cout << "Last Name:        " << getLastName() << std::endl;
+	std::cout << "Nickname:         " << getNickname() << std::endl;
+	std::cout << "Phone Number:     " << getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret:   " << getDarkestSecret() << std::endl << std::endl;
 }
