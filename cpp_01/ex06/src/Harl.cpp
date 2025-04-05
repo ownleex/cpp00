@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 01:45:04 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/05 01:47:14 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/05 22:38:48 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,16 @@ void Harl::filterComplain(std::string level) {
 	switch (levelIndex) {
 		case 0:
 			(this->*funcs[0])();
+			// fallthrough
 		case 1:
 			(this->*funcs[1])();
+			// fallthrough
 		case 2:
 			(this->*funcs[2])();
+			// fallthrough
 		case 3:
 			(this->*funcs[3])();
+			// fallthrough
 			break;
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
