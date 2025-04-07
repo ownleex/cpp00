@@ -6,11 +6,11 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/07 21:01:35 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/07 21:02:41 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/07 21:21:34 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				:= claptrap
+NAME				:= scavtrap
 
 CC					:= c++
 CFLAGS				:= -Wall -Wextra -Werror -std=c++98
@@ -21,7 +21,8 @@ HEADERS				:= -I./include
 
 SRCDIR				:= src
 SRCS				:= $(SRCDIR)/main.cpp \
-					   $(SRCDIR)/ClapTrap.cpp
+					   $(SRCDIR)/ClapTrap.cpp \
+					   $(SRCDIR)/ScavTrap.cpp
 
 OBJDIR				:= obj
 OBJS				:= $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
