@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:00:27 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/07 21:20:20 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/07 21:44:39 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@
 # include <iostream>
 
 class ClapTrap {
-private:
-    std::string _name;
-    unsigned int _hitPoints;
-    unsigned int _energyPoints;
-    unsigned int _attackDamage;
-
 protected:
     std::string _name;
     unsigned int _hitPoints;
