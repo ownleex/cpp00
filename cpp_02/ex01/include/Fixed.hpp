@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 18:46:01 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/06 19:04:21 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:51:05 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,25 @@ private:
     static const int _fractionalBits = 8;
 
 public:
-    // Constructeur par défaut
+    // Default constructor
     Fixed(void);
     
-    // Constructeur avec un entier
+    // Constructor with an integer
     Fixed(const int n);
     
-    // Constructeur avec un flottant
+    // Constructor with a float
     Fixed(const float n);
     
-    // Constructeur de recopie
+    // Copy constructor
     Fixed(const Fixed &src);
     
-    // Opérateur d'affectation
+    // Copy Assignment operator
     Fixed &operator=(const Fixed &rhs);
     
-    // Destructeur
+    // Destructor
     ~Fixed(void);
     
-    // Accesseurs
+    // Accessors
     int getRawBits(void) const;
     void setRawBits(int const raw);
     
@@ -48,7 +48,7 @@ public:
     int toInt(void) const;
 };
 
-// Surcharge de l'opérateur d'insertion
+// Overload of the insertion operator
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 18:49:32 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/06 19:04:13 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:51:26 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ private:
     static const int _fractionalBits = 8;
 
 public:
-    // Constructeurs et destructeur
+    // Constructors and destructor
     Fixed(void);
     Fixed(const int n);
     Fixed(const float n);
     Fixed(const Fixed &src);
     ~Fixed(void);
     
-    // Opérateur d'affectation
+    // Copy Assignment operator
     Fixed &operator=(const Fixed &rhs);
     
-    // Accesseurs
+    // Accessors
     int getRawBits(void) const;
     void setRawBits(int const raw);
     
@@ -39,7 +39,7 @@ public:
     float toFloat(void) const;
     int toInt(void) const;
     
-    // Opérateurs de comparaison
+    // Comparison operators
     bool operator>(const Fixed &rhs) const;
     bool operator<(const Fixed &rhs) const;
     bool operator>=(const Fixed &rhs) const;
@@ -47,26 +47,26 @@ public:
     bool operator==(const Fixed &rhs) const;
     bool operator!=(const Fixed &rhs) const;
     
-    // Opérateurs arithmétiques
+    // Arithmetic operators
     Fixed operator+(const Fixed &rhs) const;
     Fixed operator-(const Fixed &rhs) const;
     Fixed operator*(const Fixed &rhs) const;
     Fixed operator/(const Fixed &rhs) const;
     
-    // Opérateurs d'incrémentation et de décrémentation
-    Fixed &operator++();    // Pré-incrémentation
-    Fixed operator++(int);  // Post-incrémentation
-    Fixed &operator--();    // Pré-décrémentation
-    Fixed operator--(int);  // Post-décrémentation
+    // Increment and decrement operators
+    Fixed &operator++();    // Pre-increment
+    Fixed operator++(int);  // Post-increment
+    Fixed &operator--();    // Pre-decrement
+    Fixed operator--(int);  // Post-decrement
     
-    // Fonctions membres statiques min et max
+    // Static member functions min and max
     static Fixed &min(Fixed &a, Fixed &b);
     static const Fixed &min(const Fixed &a, const Fixed &b);
     static Fixed &max(Fixed &a, Fixed &b);
     static const Fixed &max(const Fixed &a, const Fixed &b);
 };
 
-// Surcharge de l'opérateur d'insertion
+// Overload of the insertion operator
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif

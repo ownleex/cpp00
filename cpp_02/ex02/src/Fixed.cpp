@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 18:49:50 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/06 19:04:10 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:51:17 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,35 @@
 #include <cmath>
 #include "Fixed.hpp"
 
-// Constructeur par défaut
+// Default constructor
 Fixed::Fixed(void) : _fixedPointValue(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
-// Constructeur avec un entier
+// Constructor with an integer
 Fixed::Fixed(const int n) {
     std::cout << "Int constructor called" << std::endl;
     _fixedPointValue = n << _fractionalBits;
 }
 
-// Constructeur avec un flottant
+// Constructor with a float
 Fixed::Fixed(const float n) {
     std::cout << "Float constructor called" << std::endl;
     _fixedPointValue = roundf(n * (1 << _fractionalBits));
 }
 
-// Constructeur de recopie
+// Copy constructor
 Fixed::Fixed(const Fixed &src) {
     std::cout << "Copy constructor called" << std::endl;
     *this = src;
 }
 
-// Destructeur
+// Destructor
 Fixed::~Fixed(void) {
     std::cout << "Destructor called" << std::endl;
 }
 
-// Opérateur d'affectation
+// Copy Assignment operator
 Fixed &Fixed::operator=(const Fixed &rhs) {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &rhs)
@@ -50,7 +50,7 @@ Fixed &Fixed::operator=(const Fixed &rhs) {
     return *this;
 }
 
-// Accesseurs
+// Accessors
 int Fixed::getRawBits(void) const {
     return this->_fixedPointValue;
 }
@@ -68,13 +68,13 @@ int Fixed::toInt(void) const {
     return _fixedPointValue >> _fractionalBits;
 }
 
-// Surcharge de l'opérateur d'insertion
+// Overload of the insertion operator
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
     out << fixed.toFloat();
     return out;
 }
 
-// Opérateurs de comparaison
+// Comparison operators
 bool Fixed::operator>(const Fixed &rhs) const {
     return this->_fixedPointValue > rhs._fixedPointValue;
 }
@@ -99,7 +99,7 @@ bool Fixed::operator!=(const Fixed &rhs) const {
     return this->_fixedPointValue != rhs._fixedPointValue;
 }
 
-// Opérateurs arithmétiques
+// Arithmetic operators
 Fixed Fixed::operator+(const Fixed &rhs) const {
     Fixed result;
     result.setRawBits(this->_fixedPointValue + rhs._fixedPointValue);
@@ -126,34 +126,34 @@ Fixed Fixed::operator/(const Fixed &rhs) const {
     return Fixed(this->toFloat() / rhs.toFloat());
 }
 
-// Opérateurs d'incrémentation et de décrémentation
+// Increment and decrement operators
 Fixed &Fixed::operator++() {
-    // Pré-incrémentation
+    // Pre-increment
     this->_fixedPointValue += 1;
     return *this;
 }
 
 Fixed Fixed::operator++(int) {
-    // Post-incrémentation
+    // Post-increment
     Fixed temp(*this);
     ++(*this);
     return temp;
 }
 
 Fixed &Fixed::operator--() {
-    // Pré-décrémentation
+    // Pre-decrement
     this->_fixedPointValue -= 1;
     return *this;
 }
 
 Fixed Fixed::operator--(int) {
-    // Post-décrémentation
+    // Post-decrement
     Fixed temp(*this);
     --(*this);
     return temp;
 }
 
-// Fonctions membres statiques min et max
+// Static member functions min and max
 Fixed &Fixed::min(Fixed &a, Fixed &b) {
     return (a < b) ? a : b;
 }

@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 18:46:22 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/06 19:04:25 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:50:53 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,32 @@
 #include <cmath>
 #include "Fixed.hpp"
 
-// Constructeur par défaut
+// Default constructor
 Fixed::Fixed(void) : _fixedPointValue(0) {
     std::cout << "Default constructor called" << std::endl;
 }
 
-// Constructeur avec un entier
+// Constructor with an integer
 Fixed::Fixed(const int n) {
     std::cout << "Int constructor called" << std::endl;
-    // Conversion d'un entier en virgule fixe en décalant les bits
+    // Conversion of an integer to fixed-point by shifting bits
     _fixedPointValue = n << _fractionalBits;
 }
 
-// Constructeur avec un flottant
+// Constructor with a float
 Fixed::Fixed(const float n) {
     std::cout << "Float constructor called" << std::endl;
-    // Conversion d'un flottant en virgule fixe en multipliant par 2^_fractionalBits et arrondissant
+    // Conversion of a float to fixed-point by multiplying by 2^_fractionalBits and rounding
     _fixedPointValue = roundf(n * (1 << _fractionalBits));
 }
 
-// Constructeur de recopie
+// Copy constructor
 Fixed::Fixed(const Fixed &src) {
     std::cout << "Copy constructor called" << std::endl;
     *this = src;
 }
 
-// Opérateur d'affectation
+// Copy Assignment operator
 Fixed &Fixed::operator=(const Fixed &rhs) {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &rhs)
@@ -47,12 +47,12 @@ Fixed &Fixed::operator=(const Fixed &rhs) {
     return *this;
 }
 
-// Destructeur
+// Destructor
 Fixed::~Fixed(void) {
     std::cout << "Destructor called" << std::endl;
 }
 
-// Accesseurs
+// Accessors
 int Fixed::getRawBits(void) const {
     return this->_fixedPointValue;
 }
@@ -63,16 +63,16 @@ void Fixed::setRawBits(int const raw) {
 
 // Conversions
 float Fixed::toFloat(void) const {
-    // Conversion de virgule fixe en flottant en divisant par 2^_fractionalBits
+    // Conversion from fixed-point to float by dividing by 2^_fractionalBits
     return (float)_fixedPointValue / (1 << _fractionalBits);
 }
 
 int Fixed::toInt(void) const {
-    // Conversion de virgule fixe en entier en décalant à droite
+    // Conversion from fixed-point to integer by right-shifting
     return _fixedPointValue >> _fractionalBits;
 }
 
-// Surcharge de l'opérateur d'insertion
+// Overload of the insertion operator
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
     out << fixed.toFloat();
     return out;

@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 18:34:06 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/07 14:38:12 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/09 17:50:19 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,19 @@ private:
     static const int _fractionalBits = 8;
 
 public:
-    // Constructeur par défaut
+    // Default constructor
     Fixed(void);
     
-    // Constructeur de recopie
+    // Copy constructor
     Fixed(const Fixed &src);
     
-    // Opérateur d'affectation
+    // Copy Assignment operator
     Fixed &operator=(const Fixed &rhs);
     
-    // Destructeur
+    // Destructor
     ~Fixed(void);
     
-    // Accesseurs
+    // Accessors
     int getRawBits(void) const;
     void setRawBits(int const raw);
 };
