@@ -6,13 +6,13 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 18:49:57 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/09 20:53:46 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/09 20:57:35 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Fixed.hpp"
-
+/*
 int main(void) {
     Fixed a;
     Fixed const b(Fixed(5.05f) * Fixed(2));
@@ -29,8 +29,8 @@ int main(void) {
     
     return 0;
 }
+*/
 
-/*
 void print_separator() {
     std::cout << "\n----------------------------------------\n" << std::endl;
 }
@@ -77,12 +77,6 @@ int main(void) {
     std::cout << "c - b = " << f << " (" << c << " - " << b << ")" << std::endl;
     std::cout << "b * c = " << g << " (" << b << " * " << c << ")" << std::endl;
     std::cout << "c / b = " << h << " (" << c << " / " << b << ")" << std::endl;
-
-    // Test de division par zéro
-    std::cout << "\nTest de division par zéro:" << std::endl;
-    Fixed zero;
-    Fixed test = b / zero;
-    std::cout << "b / zero = " << test << std::endl;
 
     print_separator();
 
@@ -136,4 +130,3 @@ int main(void) {
 
     return 0;
 }
-*/
