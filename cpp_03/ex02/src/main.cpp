@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:01:01 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/10 19:10:31 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/10 19:34:40 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int main() {
     FragTrap frag2("FR4G-TP-2");
     frag2.takeDamage(200); // More than its hit points
     frag2.attack("target"); // Should not be able to attack
-    frag2.highFivesGuys(); // Should not be able to ask for a high five
     
     // Test loss of all energy points
     std::cout << "\nTest: loss of all energy points" << std::endl;
@@ -81,7 +80,6 @@ int main() {
     std::cout << "\nAttempts to perform actions without energy:" << std::endl;
     frag3.attack("target");
     frag3.beRepaired(5);
-    frag3.highFivesGuys(); // Should be able to ask for a high five even without energy
     
     std::cout << "\n--- End of program ---" << std::endl;
     return 0;

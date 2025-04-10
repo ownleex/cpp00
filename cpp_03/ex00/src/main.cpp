@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:01:01 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/10 19:22:48 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/10 19:28:29 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,37 +46,38 @@ int main() {
     std::cout << "\n--- Repair Test ---" << std::endl;
     clap.beRepaired(3);
 
-    std::cout << "\n--- Final Stats ---" << std::endl;
+    std::cout << "\n--- Stats after repair ---" << std::endl;
     std::cout << "ClapTrap " << clap.getName() << " stats:" << std::endl;
     std::cout << "Hit Points: " << clap.getHitPoints() << std::endl;
     std::cout << "Energy Points: " << clap.getEnergyPoints() << std::endl;
     std::cout << "Attack Damage: " << clap.getAttackDamage() << std::endl;
 
-    // Tests supplémentaires pour les limites de ClapTrap
-    std::cout << "\n=== Tests des limites de ClapTrap ===" << std::endl;
+    // Additional tests for ClapTrap limits
+    std::cout << "\n=== Tests of ClapTrap limits ===" << std::endl;
     
-    // Test de perte de tous les points de vie
-    std::cout << "\nTest: perte de tous les points de vie" << std::endl;
+    // Test of loss of all hit points
+    std::cout << "\nTest: loss of all hit points" << std::endl;
     ClapTrap clap2("CL4P-TP-2");
-    clap2.takeDamage(20); // Plus que ses points de vie
-    clap2.attack("cible"); // Ne devrait pas pouvoir attaquer
-    clap2.beRepaired(5); // Ne devrait pas pouvoir se réparer
+    clap2.takeDamage(20); // More than its hit points
+    clap2.attack("target"); // Should not be able to attack
+    clap2.beRepaired(5); // Should not be able to repair itself
     
-    // Test de perte de tous les points d'énergie
-    std::cout << "\nTest: perte de tous les points d'énergie" << std::endl;
+    // Test of loss of all energy points
+    std::cout << "\nTest: loss of all energy points" << std::endl;
     ClapTrap clap3("CL4P-TP-3");
     
-    // Épuiser les points d'énergie (10 actions)
+    // Exhaust energy points (10 actions)
     for (int i = 0; i < 10; i++) {
-        clap3.attack("cible");
+        clap3.attack("target");
     }
     
-    // Tentatives d'actions sans énergie
-    std::cout << "\nTentatives d'actions sans énergie:" << std::endl;
-    clap3.attack("cible"); // Ne devrait pas pouvoir attaquer
-    clap3.beRepaired(5); // Ne devrait pas pouvoir se réparer
+    // Attempts to perform actions without energy
+    std::cout << "\nAttempts to perform actions without energy:" << std::endl;
+    clap3.attack("target"); // Should not be able to attack
+    clap3.beRepaired(5); // Should not be able to repair itself
     
     std::cout << "\n=== End of Test ===\n" << std::endl;
+    std::cout << std::endl;
     
     return 0;
 }
