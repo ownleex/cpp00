@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fragtrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:29:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/07 21:29:47 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/10 19:15:16 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
     FragTrap& operator=(const FragTrap& other);
 
     // Méthodes spécifiques à FragTrap
+    void attack(const std::string& target);
     void highFivesGuys(void);
 };
 

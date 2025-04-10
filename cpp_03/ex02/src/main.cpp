@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:01:01 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/10 18:51:36 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/10 19:10:31 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,78 +15,74 @@
 #include "FragTrap.hpp"
 
 int main() {
-    // Test de la classe FragTrap
-    std::cout << "\n=== Test de la classe FragTrap ===\n" << std::endl;
+    // Test of the FragTrap class
+    std::cout << "\n=== FragTrap Class Test ===\n" << std::endl;
     FragTrap frag("FR4G-TP");
     
-    // Affichage des valeurs initiales
-    std::cout << "\n--- Valeurs initiales ---" << std::endl;
+    // Display of initial values
+    std::cout << "\n--- Initial Values ---" << std::endl;
     std::cout << "FragTrap " << frag.getName() << " stats:" << std::endl;
-    std::cout << "Points de vie: " << frag.getHitPoints() << std::endl;
-    std::cout << "Points d'énergie: " << frag.getEnergyPoints() << std::endl;
-    std::cout << "Dégâts d'attaque: " << frag.getAttackDamage() << std::endl;
+    std::cout << "Hit Points: " << frag.getHitPoints() << std::endl;
+    std::cout << "Energy Points: " << frag.getEnergyPoints() << std::endl;
+    std::cout << "Attack Damage: " << frag.getAttackDamage() << std::endl;
     
-    // Test des méthodes
-    std::cout << "\n--- Test d'attaque ---" << std::endl;
+    // Test methods
+    std::cout << "\n--- Attack Test ---" << std::endl;
     frag.attack("Super Badass");
 
-    std::cout << "\n--- Valeurs après attaque ---" << std::endl;
+    std::cout << "\n--- Values after attack ---" << std::endl;
     std::cout << "FragTrap " << frag.getName() << " stats:" << std::endl;
-    std::cout << "Points de vie: " << frag.getHitPoints() << std::endl;
-    std::cout << "Points d'énergie: " << frag.getEnergyPoints() << std::endl;
-    std::cout << "Dégâts d'attaque: " << frag.getAttackDamage() << std::endl;
+    std::cout << "Hit Points: " << frag.getHitPoints() << std::endl;
+    std::cout << "Energy Points: " << frag.getEnergyPoints() << std::endl;
+    std::cout << "Attack Damage: " << frag.getAttackDamage() << std::endl;
 
-    std::cout << "\n--- Test de dégâts ---" << std::endl;
+    std::cout << "\n--- Damage Test ---" << std::endl;
     frag.takeDamage(50);
 
-    std::cout << "\n--- Valeurs après dégâts ---" << std::endl;
+    std::cout << "\n--- Values after damage ---" << std::endl;
     std::cout << "FragTrap " << frag.getName() << " stats:" << std::endl;
-    std::cout << "Points de vie: " << frag.getHitPoints() << std::endl;
-    std::cout << "Points d'énergie: " << frag.getEnergyPoints() << std::endl;
-    std::cout << "Dégâts d'attaque: " << frag.getAttackDamage() << std::endl;
+    std::cout << "Hit Points: " << frag.getHitPoints() << std::endl;
+    std::cout << "Energy Points: " << frag.getEnergyPoints() << std::endl;
+    std::cout << "Attack Damage: " << frag.getAttackDamage() << std::endl;
     
-    std::cout << "\n--- Test de réparation ---" << std::endl;
+    std::cout << "\n--- Repair Test ---" << std::endl;
     frag.beRepaired(25);
     
-    std::cout << "\n--- Valeurs après réparation ---" << std::endl;
+    std::cout << "\n--- Values after repair ---" << std::endl;
     std::cout << "FragTrap " << frag.getName() << " stats:" << std::endl;
-    std::cout << "Points de vie: " << frag.getHitPoints() << std::endl;
-    std::cout << "Points d'énergie: " << frag.getEnergyPoints() << std::endl;
-    std::cout << "Dégâts d'attaque: " << frag.getAttackDamage() << std::endl;
+    std::cout << "Hit Points: " << frag.getHitPoints() << std::endl;
+    std::cout << "Energy Points: " << frag.getEnergyPoints() << std::endl;
+    std::cout << "Attack Damage: " << frag.getAttackDamage() << std::endl;
     
-    // Test de la méthode spécifique
-    std::cout << "\n--- Test de highFivesGuys ---" << std::endl;
+    // Test specific method
+    std::cout << "\n--- highFivesGuys Test ---" << std::endl;
     frag.highFivesGuys();
     
-    // Tests des limites pour FragTrap
-    std::cout << "\n--- Tests des limites pour FragTrap ---" << std::endl;
+    // Test limits for FragTrap
+    std::cout << "\n--- FragTrap Limit Tests ---" << std::endl;
     
-    // Test de perte de tous les points de vie
-    std::cout << "\nTest: perte de tous les points de vie" << std::endl;
+    // Test loss of all hit points
+    std::cout << "\nTest: loss of all hit points" << std::endl;
     FragTrap frag2("FR4G-TP-2");
-    frag2.takeDamage(200); // Plus que ses points de vie
-    frag2.attack("cible"); // Ne devrait pas pouvoir attaquer
-    frag2.highFivesGuys(); // Ne devrait pas pouvoir demander un high five
+    frag2.takeDamage(200); // More than its hit points
+    frag2.attack("target"); // Should not be able to attack
+    frag2.highFivesGuys(); // Should not be able to ask for a high five
     
-    // Test de perte de tous les points d'énergie
-    std::cout << "\nTest: perte de tous les points d'énergie" << std::endl;
+    // Test loss of all energy points
+    std::cout << "\nTest: loss of all energy points" << std::endl;
     FragTrap frag3("FR4G-TP-3");
     
-    // Épuiser les points d'énergie (100 actions)
+    // Exhaust energy points (100 actions)
     for (int i = 0; i < 100; i++) {
-        if (i % 20 == 0) // Afficher seulement tous les 20 pour éviter trop de sortie
-            std::cout << "Action " << (i + 1) << ": ";
-        frag3.attack("cible");
-        if (i % 20 == 0)
-            std::cout << std::endl;
+        frag3.attack("target");
     }
     
-    // Essayer d'effectuer des actions sans énergie
-    std::cout << "\nTentatives d'actions sans énergie:" << std::endl;
-    frag3.attack("cible");
+    // Try to perform actions without energy
+    std::cout << "\nAttempts to perform actions without energy:" << std::endl;
+    frag3.attack("target");
     frag3.beRepaired(5);
-    frag3.highFivesGuys(); // Devrait pouvoir demander un high five même sans énergie
+    frag3.highFivesGuys(); // Should be able to ask for a high five even without energy
     
-    std::cout << "\n--- Fin du programme ---" << std::endl;
+    std::cout << "\n--- End of program ---" << std::endl;
     return 0;
 }
