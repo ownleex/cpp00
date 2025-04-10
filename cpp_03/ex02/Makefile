@@ -6,7 +6,7 @@
 #    By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/07 21:01:35 by ayarmaya          #+#    #+#              #
-#    Updated: 2025/04/07 21:45:55 by ayarmaya         ###   ########.fr        #
+#    Updated: 2025/04/10 21:16:16 by ayarmaya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCDIR				:= src
 SRCS				:= $(SRCDIR)/main.cpp \
 					   $(SRCDIR)/ClapTrap.cpp \
 					   $(SRCDIR)/ScavTrap.cpp \
-					   $(SRCDIR)/FragTrap.cpp
+					   $(SRCDIR)/FragTrap.cpp \
 
 OBJDIR				:= obj
 OBJS				:= $(patsubst $(SRCDIR)/%.cpp, $(OBJDIR)/%.o, $(SRCS))
