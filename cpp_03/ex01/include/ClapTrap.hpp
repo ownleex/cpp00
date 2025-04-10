@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:00:27 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/07 21:44:03 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/10 18:09:14 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ protected:
     unsigned int _attackDamage;
 
 public:
-    // Constructeurs et destructeur
+    // Constructor and destructor
     ClapTrap();
     ClapTrap(const std::string& name);
     ClapTrap(const ClapTrap& other);
     ~ClapTrap();
 
-    // Opérateur d'affectation
+    // Assigment operator
     ClapTrap& operator=(const ClapTrap& other);
 
-    // Méthodes principales
+    // Method
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);

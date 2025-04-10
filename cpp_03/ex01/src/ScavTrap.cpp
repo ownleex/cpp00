@@ -6,41 +6,41 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:18:18 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/10 17:29:02 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:57:11 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-// Constructeur par défaut
+// Default constructor
 ScavTrap::ScavTrap() : ClapTrap(), _guardMode(false) {
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
-    std::cout << "ScavTrap constructeur par défaut appelé" << std::endl;
+    std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-// Constructeur avec nom
+// Constructor with name
 ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name), _guardMode(false) {
     this->_hitPoints = 100;
     this->_energyPoints = 50;
     this->_attackDamage = 20;
-    std::cout << "ScavTrap constructeur avec nom appelé pour " << this->_name << std::endl;
+    std::cout << "ScavTrap constructor with name called for " << this->_name << std::endl;
 }
 
-// Constructeur de copie
+// Copy constructor
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other), _guardMode(other._guardMode) {
-    std::cout << "ScavTrap constructeur de copie appelé" << std::endl;
+    std::cout << "ScavTrap copy constructor called" << std::endl;
 }
 
-// Destructeur
+// Destructor
 ScavTrap::~ScavTrap() {
-    std::cout << "ScavTrap destructeur appelé pour " << this->_name << std::endl;
+    std::cout << "ScavTrap destructor called for " << this->_name << std::endl;
 }
 
-// Opérateur d'affectation
+// Assignment operator
 ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
-    std::cout << "ScavTrap opérateur d'affectation appelé" << std::endl;
+    std::cout << "ScavTrap assignment operator called" << std::endl;
     if (this != &other) {
         ClapTrap::operator=(other);
         this->_guardMode = other._guardMode;
@@ -48,25 +48,25 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& other) {
     return *this;
 }
 
-// Méthode d'attaque redéfinie
+// Redefined attack method
 void ScavTrap::attack(const std::string& target) {
     if (this->_energyPoints == 0) {
-        std::cout << "ScavTrap " << this->_name << " n'a plus de points d'énergie pour attaquer!" << std::endl;
+        std::cout << "ScavTrap " << this->_name << " has no energy points left to attack!" << std::endl;
         return;
     }
     if (this->_hitPoints == 0) {
-        std::cout << "ScavTrap " << this->_name << " ne peut pas attaquer car il n'a plus de points de vie!" << std::endl;
+        std::cout << "ScavTrap " << this->_name << " cannot attack because it has no hit points left!" << std::endl;
         return;
     }
     
     this->_energyPoints--;
     
-    std::cout << "ScavTrap " << this->_name << " attaque " << target 
-              << ", causant " << this->_attackDamage << " points de dégâts! Points d'énergie restant: " << this->_energyPoints << std::endl;
+    std::cout << "ScavTrap " << this->_name << " attacks " << target 
+              << ", causing " << this->_attackDamage << " points of damage! Remaining energy points: " << this->_energyPoints << std::endl;
 }
 
-// Méthode spécifique à ScavTrap
+// ScavTrap specific method
 void ScavTrap::guardGate() {
     this->_guardMode = true;
-    std::cout << "ScavTrap " << this->_name << " est maintenant en mode Gate keeper!" << std::endl;
+    std::cout << "ScavTrap " << this->_name << " is now in Gate keeper mode!" << std::endl;
 }
