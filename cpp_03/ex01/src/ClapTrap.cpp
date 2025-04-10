@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:00:44 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/07 21:00:46 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:28:49 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,10 @@ void ClapTrap::attack(const std::string& target) {
         return;
     }
     
-    std::cout << "ClapTrap " << this->_name << " attaque " << target 
-              << ", causant " << this->_attackDamage << " points de dégâts!" << std::endl;
     this->_energyPoints--;
+    
+    std::cout << "ClapTrap " << this->_name << " attaque " << target 
+              << ", causant " << this->_attackDamage << " points de dégâts! Points d'énergie restant: " << this->_energyPoints << std::endl;
 }
 
 // Méthode pour subir des dégâts

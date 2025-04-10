@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:18:18 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/07 21:18:22 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/10 17:29:02 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,10 @@ void ScavTrap::attack(const std::string& target) {
         return;
     }
     
-    std::cout << "ScavTrap " << this->_name << " attaque " << target 
-              << ", causant " << this->_attackDamage << " points de dégâts!" << std::endl;
     this->_energyPoints--;
+    
+    std::cout << "ScavTrap " << this->_name << " attaque " << target 
+              << ", causant " << this->_attackDamage << " points de dégâts! Points d'énergie restant: " << this->_energyPoints << std::endl;
 }
 
 // Méthode spécifique à ScavTrap
