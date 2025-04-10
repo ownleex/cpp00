@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:29:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/10 19:15:16 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/11 01:48:46 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 
 class FragTrap : public ClapTrap {
 public:
-    // Constructeurs et destructeur
+    // Constructors and destructor
     FragTrap();
     FragTrap(const std::string& name);
     FragTrap(const FragTrap& other);
     ~FragTrap();
 
-    // Opérateur d'affectation
+    // Assignment operator
     FragTrap& operator=(const FragTrap& other);
 
-    // Méthodes spécifiques à FragTrap
+    // Specific method
     void attack(const std::string& target);
     void highFivesGuys(void);
 };

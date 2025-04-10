@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:17:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/07 21:18:00 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/11 01:47:53 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ private:
     bool _guardMode;
 
 public:
-    // Constructeurs et destructeur
+    // Constructors and destructor
     ScavTrap();
     ScavTrap(const std::string& name);
     ScavTrap(const ScavTrap& other);
     ~ScavTrap();
 
-    // Opérateur d'affectation
+    // Assignment operator
     ScavTrap& operator=(const ScavTrap& other);
 
-    // Méthodes spécifiques à ScavTrap
+    // Specific method
     void attack(const std::string& target);
     void guardGate();
 };
