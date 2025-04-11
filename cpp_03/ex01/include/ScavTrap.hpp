@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 21:17:45 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/10 18:06:49 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/12 00:00:21 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap {
-private:
-    bool _guardMode;
-
 public:
     // Constructor and destructor
     ScavTrap();
