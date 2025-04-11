@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:49:02 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/11 15:26:53 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:12:34 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 Brain::Brain() {
     std::cout << "Brain constructeur par défaut appelé" << std::endl;
     for (int i = 0; i < 100; i++) {
-        // Initialisation avec une chaîne générique sans utiliser de conversion
         this->ideas[i] = "Idée par défaut";
     }
 }

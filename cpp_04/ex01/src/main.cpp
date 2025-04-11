@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:36:15 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/07 22:52:06 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:06:09 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-#define NUM_ANIMALS 10
+#define NUM_ANIMALS 4
 
 int main() {
     // Test des destructeurs et de la gestion de mémoire avec des objets simples
-    std::cout << "=== Test avec des objets simples ===" << std::endl;
+    std::cout << "\n=== Test avec des objets simples ===\n" << std::endl;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
     
@@ -27,7 +27,7 @@ int main() {
     delete i;
 
     // Test du tableau d'animaux
-    std::cout << "\n=== Test avec un tableau d'animaux ===" << std::endl;
+    std::cout << "\n=== Test avec un tableau d'animaux ===\n" << std::endl;
     Animal* animals[NUM_ANIMALS];
     
     // Remplir le tableau (moitié chiens, moitié chats)
@@ -45,7 +45,7 @@ int main() {
     }
     
     // Test de la copie profonde
-    std::cout << "\n=== Test de la copie profonde ===" << std::endl;
+    std::cout << "\n=== Test de la copie profonde ===\n" << std::endl;
     Dog* originalDog = new Dog();
     originalDog->getBrain()->setIdea(0, "Je suis le chien original!");
     
@@ -64,7 +64,7 @@ int main() {
     delete copyDog;
     
     // Test supplémentaire avec l'opérateur d'assignation
-    std::cout << "\n=== Test avec l'opérateur d'assignation ===" << std::endl;
+    std::cout << "\n=== Test avec l'opérateur d'assignation ===\n" << std::endl;
     Cat firstCat;
     firstCat.getBrain()->setIdea(0, "Je suis le premier chat!");
     
