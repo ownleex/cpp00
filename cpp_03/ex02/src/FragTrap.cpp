@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 21:02:58 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/10 21:03:35 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/11 21:20:43 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,5 @@ void FragTrap::attack(const std::string& target) {
 
 // FragTrap specific method
 void FragTrap::highFivesGuys(void) {
-    if (this->_hitPoints == 0) {
-        std::cout << "FragTrap " << this->_name << " is out of service and cannot ask for a high five!" << std::endl;
-        return;
-    }
-    
     std::cout << "FragTrap " << this->_name << " happily requests a high five from everyone! 🖐️" << std::endl;
 }
