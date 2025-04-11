@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 18:46:15 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/09 19:03:25 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/11 19:05:17 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,10 @@ int main(void) {
 
     return 0;
 }
+
+/*
+    std::cout << "a is " << a.toFloat() << " as integer" << std::endl;
+    std::cout << "b is " << b.toFloat() << " as integer" << std::endl;
+    std::cout << "c is " << c.toFloat() << " as integer" << std::endl;
+    std::cout << "d is " << d.toFloat() << " as integer" << std::endl;
+*/
