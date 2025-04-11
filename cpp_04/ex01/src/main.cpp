@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:36:15 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/11 17:06:09 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:58:29 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,39 @@ int main() {
     for (int k = 0; k < NUM_ANIMALS; k++) {
         delete animals[k];
     }
+
     
-    // Test de la copie profonde
-    std::cout << "\n=== Test de la copie profonde ===\n" << std::endl;
+    
+    // Test spécifique mentionné dans l'évaluation pour vérifier la copie profonde
+    std::cout << "\n=== Test spécifique de la copie profonde (test de l'évaluation) ===\n" << std::endl;
+    {
+        Dog basic;
+        basic.getBrain()->setIdea(0, "Idée originale de basic");
+        
+        // Afficher l'idée originale
+        std::cout << "Idée de basic avant la copie: " << basic.getBrain()->getIdea(0) << std::endl;
+        
+        {
+            // Création d'une copie dans un nouveau scope
+            Dog tmp = basic;
+            std::cout << "Idée de tmp après copie: " << tmp.getBrain()->getIdea(0) << std::endl;
+            
+            // Modifier l'idée de tmp
+            tmp.getBrain()->setIdea(0, "Nouvelle idée de tmp");
+            std::cout << "Idée de tmp après modification: " << tmp.getBrain()->getIdea(0) << std::endl;
+            std::cout << "Idée de basic après modification de tmp: " << basic.getBrain()->getIdea(0) << std::endl;
+            
+            // À la fin de ce bloc, tmp est détruit
+            std::cout << "Fin du bloc intérieur, tmp va être détruit" << std::endl;
+        }
+        
+        // Vérifier que basic est toujours valide après la destruction de tmp
+        std::cout << "Après destruction de tmp, basic est toujours valide." << std::endl;
+        std::cout << "Idée de basic après destruction de tmp: " << basic.getBrain()->getIdea(0) << std::endl;
+    }
+    
+    // Test de la copie profonde avec constructeur de copie
+    std::cout << "\n=== Test de la copie profonde avec constructeur de copie ===\n" << std::endl;
     Dog* originalDog = new Dog();
     originalDog->getBrain()->setIdea(0, "Je suis le chien original!");
     
@@ -62,6 +92,8 @@ int main() {
     // Nettoyage
     delete originalDog;
     delete copyDog;
+
+
     
     // Test supplémentaire avec l'opérateur d'assignation
     std::cout << "\n=== Test avec l'opérateur d'assignation ===\n" << std::endl;
