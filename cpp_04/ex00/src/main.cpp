@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:36:15 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/11 14:16:26 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/12 21:44:59 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,6 @@ int main() {
     
     delete wrongMeta;
     delete wrongCat;
-    
-    // Test direct avec WrongCat
-    std::cout << "\n=== Test direct avec WrongCat ===" << std::endl;
-    WrongCat directWrongCat;
-    directWrongCat.makeSound(); // Cette fois, ça affichera le son du WrongCat
     
     return 0;
 }
