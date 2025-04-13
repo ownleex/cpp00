@@ -6,7 +6,7 @@
 /*   By: ayarmaya <ayarmaya@student.42nice.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 22:36:15 by ayarmaya          #+#    #+#             */
-/*   Updated: 2025/04/13 02:15:27 by ayarmaya         ###   ########.fr       */
+/*   Updated: 2025/04/13 02:21:27 by ayarmaya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int main() {
     // Tentative d'instanciation de AAnimal - Commenté car c'est une classe abstraite et cela ne compilera pas
     // AAnimal *meta = new AAnimal();
     
-    // La ligne suivante provoquerait une erreur de compilation:
-    // error: cannot declare variable 'animal' to be of abstract type 'AAnimal'
+    // La ligne suivante provoquerait une erreur de compilation
     // AAnimal animal;
     
     // Utilisation des classes concrètes
